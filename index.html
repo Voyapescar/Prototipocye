@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turno Claro | Reconocimiento facial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section class="totem-screen" id="totemScreen" aria-labelledby="totemTitle">
+    <div class="totem-shell">
+      <div class="totem-brand"><span class="brand-icon">TC</span><span>Turno Claro</span></div>
+      <div class="totem-content">
+        <div class="totem-badge"><span class="online-dot"></span> Tótem de atención</div>
+        <h1 id="totemTitle">Bienvenido a su banco</h1>
+        <p class="totem-intro">Ingrese sus datos para comenzar su atención de forma rápida y segura.</p>
+
+        <form class="totem-form" id="totemForm">
+          <label for="rutInput">1. Ingrese su RUT</label>
+          <div class="input-wrap">
+            <span class="input-icon">ID</span>
+            <input id="rutInput" name="rut" type="text" inputmode="text" autocomplete="off" placeholder="12.345.678-9" maxlength="12" required>
+          </div>
+
+          <label for="procedureInput">2. ¿Qué trámite realizará?</label>
+          <div class="select-wrap">
+            <select id="procedureInput" name="procedure" required>
+              <option value="" selected disabled>Seleccione un trámite</option>
+              <option value="Actualización de datos">Actualización de datos</option>
+              <option value="Depósitos y retiros">Depósitos y retiros</option>
+              <option value="Solicitud de tarjeta">Solicitud de tarjeta</option>
+              <option value="Créditos y financiamiento">Créditos y financiamiento</option>
+              <option value="Atención preferente">Atención preferente</option>
+            </select>
+          </div>
+
+          <p class="form-error" id="formError" role="alert" hidden>Ingrese un RUT válido para continuar.</p>
+          <button class="totem-button" type="submit">Continuar <span>→</span></button>
+        </form>
+        <div class="totem-security"><span class="shield">✓</span><span>Sus datos están protegidos<br><b>Conexión segura</b></span></div>
+      </div>
+      <div class="totem-footer"><span>Recepción Norte · Tótem 04</span><span>Ayuda 24/7</span></div>
+    </div>
+  </section>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-mark" aria-label="Turno Claro">
+        <span class="brand-icon">TC</span>
+        <span>Turno Claro</span>
+      </div>
+
+      <div class="sidebar-label">Módulo de atención</div>
+      <div class="station-card">
+        <div class="station-icon">01</div>
+        <div>
+          <strong>Recepción Norte</strong>
+          <span>Puesto 04 · Activo</span>
+        </div>
+        <span class="online-dot" aria-label="En línea"></span>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a class="nav-item active" href="#inicio"><span class="nav-symbol">⌂</span>Inicio</a>
+        <a class="nav-item" href="#historial"><span class="nav-symbol">↻</span>Historial reciente</a>
+        <a class="nav-item" href="#ayuda"><span class="nav-symbol">?</span>Ayuda rápida</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="security-note"><span class="shield">✓</span><span>Sesión segura<br><b>Datos protegidos</b></span></div>
+        <div class="version">Prototipo v1.0</div>
+      </div>
+    </aside>
+
+    <main class="main-content" id="inicio">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Miércoles, 30 de septiembre de 2026</p>
+          <h1>Entrega de turno express</h1>
+        </div>
+        <div class="topbar-actions">
+          <div class="live-status"><span class="online-dot"></span> Sistema operativo</div>
+          <button class="icon-button" type="button" aria-label="Notificaciones">♢<span class="notification-dot"></span></button>
+          <div class="operator-avatar" aria-label="Operador María">MA</div>
+        </div>
+      </header>
+
+      <div class="content-grid">
+        <section class="recognizer-panel panel" aria-labelledby="recognizer-title">
+          <div class="panel-heading">
+            <div>
+              <span class="section-kicker">01 / Identificación</span>
+              <h2 id="recognizer-title">Mire a la cámara</h2>
+              <p>Reconoceremos su identidad para recuperar sus datos y asignar un turno.</p>
+            </div>
+            <div class="privacy-pill"><span>✦</span> Privado y seguro</div>
+          </div>
+
+          <div class="scanner-stage" id="scannerStage">
+            <div class="camera-frame">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=85" alt="Adulto mayor frente al reconocedor facial">
+              <div class="frame-corner corner-tl"></div>
+              <div class="frame-corner corner-tr"></div>
+              <div class="frame-corner corner-bl"></div>
+              <div class="frame-corner corner-br"></div>
+              <div class="scan-line"></div>
+              <div class="face-points"><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="camera-tag"><span class="record-dot"></span> CÁMARA EN VIVO</div>
+            </div>
+            <div class="scan-message" id="scanMessage"><span class="message-icon">◎</span><span>Rostro listo para escanear</span></div>
+          </div>
+
+          <div class="recognizer-footer">
+            <div class="steps"><span class="step active"><b>1</b> Rostro</span><span class="step-line"></span><span class="step"><b>2</b> Confirmación</span><span class="step-line"></span><span class="step"><b>3</b> Turno</span></div>
+            <button class="primary-button" id="scanButton" type="button"><span class="button-icon">◉</span> Escanear rostro <span class="arrow">→</span></button>
+          </div>
+          <button class="reset-button" id="resetButton" type="button" hidden>↶ Volver a escanear</button>
+        </section>
+
+        <aside class="result-column" aria-live="polite">
+          <section class="result-card panel" id="resultCard">
+            <div class="result-placeholder" id="resultPlaceholder">
+              <div class="placeholder-orbit"><span>✦</span></div>
+              <h3>Su turno aparecerá aquí</h3>
+              <p>El proceso tarda menos de 10 segundos y no requiere formularios.</p>
+              <div class="mini-stat"><span class="mini-check">✓</span><span><b>Sin filas, sin papeleo</b><small>Información previa disponible</small></span></div>
+            </div>
+
+            <div class="ticket-result" id="ticketResult" hidden>
+              <div class="ticket-topline"><span class="success-badge">✓ Identidad confirmada</span><span class="ticket-time" id="ticketTime">10:42</span></div>
+              <div class="ticket-heading"><div><span class="section-kicker">Su número de atención</span><div class="ticket-number" id="ticketNumber">A-042</div></div><div class="ticket-star">✦</div></div>
+              <div class="ticket-divider"></div>
+              <div class="ticket-details">
+                <div><span>Trámite detectado</span><strong>Actualización de datos</strong></div>
+                <div><span>Atiende en</span><strong>Ventanilla 03</strong></div>
+                <div><span>Espera estimada</span><strong class="green-text">5 minutos</strong></div>
+              </div>
+              <div class="ticket-user"><div class="small-avatar">JR</div><div><span>Información recuperada</span><strong>Juan Ramírez</strong><small>Cliente frecuente · Datos vigentes</small></div></div>
+              <button class="print-button" id="printButton" type="button"><span>▣</span> Imprimir ticket <em>⌘ P</em></button>
+            </div>
+          </section>
+
+          <section class="history-card panel" id="historial">
+            <div class="history-heading"><div><span class="section-kicker">Contexto recuperado</span><h3>Última atención</h3></div><span class="history-date">12 jun 2026</span></div>
+            <div class="history-row"><span class="history-icon">↗</span><div><strong>Renovación de beneficio</strong><span>Atendido en Recepción Norte</span></div><span class="history-check">✓</span></div>
+            <div class="history-note"><span>i</span> No tendrá que repetir esta información.</div>
+          </section>
+        </aside>
+      </div>
+
+      <footer class="page-footer"><span><span class="footer-dot"></span> 4 puestos atendiendo ahora</span><span>Tiempo promedio de atención <strong>7 min</strong></span><span>Ayuda <b>24/7</b> · <a href="#ayuda">Ver soporte</a></span></footer>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
